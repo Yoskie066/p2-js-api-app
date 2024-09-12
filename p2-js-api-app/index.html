@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Quiz Application</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="main">
+
+        <!-- Header Section -->
+        <header class="header">
+            <a href="#home" class="logo">e<span>Learn.</span></a>
+        </header>
+
+        <!-- Home Section -->
+        <section class="home" id="home">
+            <div class="home-image">
+                <img src="HomePage-Quiz.png" alt="Welcome Image">
+            </div>
+        
+            <div class="home-text">
+                <h1>Welcome to eLearn.</h1>
+                <p>Welcome to E.Learn, the educational quiz app for all ages. Whether you're a student, 
+                    teacher, or lifelong learner, our platform offers engaging quizzes across various 
+                    subjects to enhance your knowledge. Start exploring today and make learning both 
+                    accessible and enjoyable!</p>
+    
+                <div class="home-button">
+                    <!-- Buttons to start or about the app -->
+                    <button class="btn-Start">Start</button>
+                    <button class="btn-About">About</button>
+                </div>
+            </div>
+        </section>
+
+         <!-- About Section -->
+        <section class="about" id="about">
+            <div class="about-image">
+                <img src="About-Quiz.png" alt="About eLearn">
+            </div>
+        
+            <div class="about-text">
+                <h1>About <span>eLearn.</span></h1>
+                <p class="short-text">
+                    E.Learn is a dynamic educational quiz app designed to facilitate learning for users of all ages. 
+                    Focused on Math and Science, E.Learn offers an interactive experience where users can start by 
+                    reviewing the quiz mechanics and then proceed to customize their quiz.
+                </p>
+                <p class="more-text">
+                    Users can select the number of questions (5 or 10), choose the difficulty level (Easy, Medium, or Hard), and set the timer 
+                    (10, 15, or 20 seconds). With its user-friendly interface and instant feedback, E.Learn makes 
+                    learning both enjoyable and effective, helping users improve their knowledge in a fun and 
+                    personalized way.
+                </p>
+                <!-- Buttons to Read More and Read Less -->
+                <button class="btn-read-more">Read More</button>
+                <button class="btn-read-less" style="display: none;">Read Less</button>
+            </div>
+        </section>
+
+    <footer>
+        <div class="footer-bottom">
+            &copy; Designed by: <span>Einon Cris O. Alcantara</span>
+        </div>
+    </footer>
+    </main>
+
+    <!-- Quiz Mechanics Section -->
+    <section class="Mechanics-Quiz">
+        <div class="Quiz-Info">
+            <h2>Quiz Mechanics:</h2>
+            <span class="info">1. Select the number of questions, difficulty level, and timer duration,then click Enter.</span>
+            <span class="info">2. If a question is answered correctly, the quiz will move to the next question.</span>
+            <span class="info">3. If a question is answered incorrectly, the correct answer will be highlighted before proceeding to the next question.</span>
+            <span class="info">4. If the timer expires, the correct answer will be highlighted, and the quiz will proceed to the next question.</span>
+            <span class="info">5. The final score, reflecting the number of correct answers, will be displayed at the end of the quiz.</span>
+            
+            <div class="btn-QuizMech">
+                <!-- Buttons to exit or continue to the quiz -->
+                <button class="info-btn exit-btn">Exit Quiz</button>
+                <button class="info-btn continue-btn">Continue</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section class="Quiz">
+        <div class="container">
+            <!--Start Quiz -->
+            <div class="start-screen">
+                <h1 class="heading">e<span>Learn.</span></h1>
+                <div class="settings">
+                   <label for="difficulty">Select difficulty:</label>
+                   <select id="difficulty">
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                   </select>
+
+                    <label for="num-questions">Number of Questions:</label>
+                    <select id="num-questions">
+                        <option value="5">5 Questions</option>
+                        <option value="10">10 Questions</option>
+                    </select>
+
+                   <label for="time">Select timer:</label>
+                   <select id="time">
+                        <option value="10">10 Seconds</option>
+                        <option value="15">15 Seconds</option>
+                        <option value="20">20 Seconds</option>
+                    </select>
+                </div>
+                <div class="button-container">
+                    <button class="btn-enter">Enter</button>
+                    <button class="btn-exit">Exit</button>
+                </div>
+            </div>
+
+        <!-- Quiz Screen -->
+         <div class="quiz hide">
+            <div class="timer">
+                <div class="progress">
+                    <div class="progress-bar"></div>
+                    <span class="progress-text">15</span>
+                </div>
+            </div>
+            
+            <div class="question-wrapper">
+                <div class="number">
+                    Question <span class="current">1</span> <span class="total">/10</span>
+            </div>
+            <div class="question">This is a question?</div>
+        </div>
+        
+        <div class="answer-wrapper">
+            <div class="answer selected">
+                <span class="text">Answer</span>
+                <span class="checkbox">
+                    <i class="fas fa-check"></i>
+                </span>
+            </div>
+
+            <div class="answer selected incorrect">
+                <span class="text">Answer</span>
+                <span class="checkbox">
+                    <i class="fas fa-check"></i>
+                </span>
+            </div>
+
+            <div class="answer selected correct">
+                <span class="text">Answer</span>
+                <span class="checkbox">
+                    <i class="fas fa-check"></i>
+                </span>
+            </div>
+
+            <div class="answer selected">
+                <span class="text">Answer</span>
+                <span class="checkbox">
+                    <i class="fas fa-check"></i>
+                </span>
+            </div>
+        </div>
+        
+        <div class="button-wrapper">
+            <button class="btn submit" disabled>Submit</button>
+        </div>
+    </div>
+    
+    <!-- End Screen -->
+     <div class="end-screen hide">
+        <h1 class="heading">Quiz Completed</h1>
+        <div class="score">
+             <div>
+                <span class="final-score">0</span> <span class="total-score"></span>
+            </div>
+        </div>
+
+        <div class="difficulty">Difficulty: </div>
+        <div class="time">Time: </div>
+
+        <button class="btn btn-restart">Restart Quiz</button>
+    </div>
+</div>
+</section>
+
+<script src="main.js">defer</script>
+
+</body>
+</html>
+

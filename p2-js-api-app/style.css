@@ -1,0 +1,634 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #000066;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FFD700; 
+}
+
+/* Header */
+.header {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    top: 0; 
+    width: 100%; 
+    z-index: 1000;
+    background-color: navy; 
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo span {
+    color: #FFD700; 
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* Main Section */
+.main {
+    transition: .3s ease;
+
+}
+
+/* Home Section */
+.home {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 7em;
+    padding: 5rem 10%;
+    min-height: 100vh;
+}
+
+.home-image img {
+    width: 480px;
+    height: 480px;
+    object-fit: cover;
+}
+
+.home-text {
+    max-width: 600px;
+}
+
+.home-text h1 {
+    font-size: 40px;
+    color: #FFD700;
+}
+
+.home-text p {
+    font-size: 18px;
+    margin: 20px 0;
+    line-height: 1.5;
+}
+
+.home-button {
+    display: flex;
+    gap: 20px;
+}
+
+.home-button .btn-Start,
+.home-button .btn-About {
+    padding: 10px 20px;
+    background-color: #FFD700; 
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer; 
+}
+
+.home-button .btn-Start:hover,
+.home-button .btn-About:hover {
+    background-color: rgb(1, 1, 44); 
+    color: white;
+}
+
+/* About Section */
+.about {
+    display: flex;
+    gap: 7em;
+    padding: 5rem 10%;
+    min-height: 100vh;
+}
+
+.about-image img {
+    width: 480px;
+    height: 480px;
+    object-fit: cover;
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+.about-text h1 {
+    font-size: 40px;
+    color: white;
+}
+
+.about-text h1 span {
+    color: #FFD700;
+}
+
+.about-text p {
+    font-size: 18px;
+    margin: 20px 0;
+    line-height: 1.5;
+}
+
+.more-text {
+    display: none;
+}
+
+.btn-read-more ,
+.btn-read-less {
+    padding: 10px 20px;
+    background-color: #FFD700; 
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer; 
+}
+
+.btn-read-more:hover ,
+.btn-read-less:hover{
+    background-color: rgb(1, 1, 44); 
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: navy; 
+    color: white; 
+    padding: 20px 5%;
+    text-align: center;
+    width: 100%;
+}
+
+footer span {
+    color: #FFD700; 
+}
+
+/* Quiz Info */
+.Quiz-Info {
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    height: auto;
+    width: 800px;
+    background: navy;
+    border-radius: 8px;
+    padding: 20px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: flex;
+}
+
+.Quiz-Info.active {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.Quiz-Info h2 {
+    font-size: 35px;
+    color: #FFD700;
+    margin-bottom: 15px;
+}
+
+.Quiz-Info .info {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.btn-QuizMech {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.btn-QuizMech .info-btn {
+    padding: 10px 20px;
+    background-color: #FFD700; 
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+}
+
+.btn-QuizMech .info-btn:hover {
+    background-color: rgb(1, 1, 44); 
+    color: white;
+}
+
+/* Quiz Section */
+.container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: navy;
+    padding: 20px;
+    overflow: hidden;
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    transition: .3s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.container.active { 
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.heading {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.heading span {
+    color: #FFD700;
+}
+
+label {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    text-transform: capitalize;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background: white;
+    font-size: 18px;
+}
+
+.button-container {
+    display: flex;
+    justify-content:space-evenly; 
+    padding: 10px; 
+    gap: 20px;
+}
+
+.btn-enter,
+.btn-exit {
+    padding: 10px 20px;
+    background-color: #FFD700; 
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+}
+
+
+.btn-enter:hover,
+.btn-exit:hover {
+    background-color: rgb(1, 1, 44); 
+    color: white;
+}
+
+.start-screen .btn {
+    margin-top: 50px;
+}
+
+.hide {
+    display: none;
+}
+  
+/* Timer styles */
+.timer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px; 
+}
+
+.timer .progress {
+    width: 80%;
+    height: 20px;
+    background: transparent;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 3px solid white;
+}
+
+.timer .progress .progress-bar {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: #FFD700;
+    transition: 1s linear;
+}
+
+.timer .progress .progress-text {
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center; 
+}
+
+/* Question Wrapper */
+.question-wrapper {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.question-wrapper .number {
+    position: relative;
+    justify-content: flex-start;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: -40px; 
+}
+
+.question-wrapper .question {
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+/* Answer Wrapper */
+.answer-wrapper {
+    width: 100%;
+    margin-bottom: 5px;
+    font-size: 10px;
+}
+
+.answer-wrapper .answer {
+    width: calc(100% - 30px); 
+    max-width: 500px; 
+    height: 40px;
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    border: 3px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px auto; 
+    cursor: pointer;
+    transition: 0.3s linear;
+
+}
+
+.answer.selected .checkbox i {
+    opacity: 1;
+}
+
+.answer.correct {
+    border-color: #0cef2a;
+}
+
+.answer.incorrect {
+    border-color: #fc3939;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; 
+    margin-top: 20px; 
+}
+
+.button-wrapper .btn {
+    padding: 10px 20px;
+    background-color: #FFD700; 
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer; 
+}
+
+.button-wrapper .btn:disabled {
+    background: rgb(1, 1, 44);
+    color: white;
+    cursor: not-allowed;
+}
+
+/* End Screen styles */
+.end-screen {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.end-screen h1 {
+    color: #FFD700;
+    text-align: center;
+}
+
+.end-screen .score {
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.end-screen .score .score-text {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.end-screen .difficulty {
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.end-screen .time {
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.btn-restart {
+    padding: 10px 20px;
+    background-color: #FFD700; 
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer; 
+}
+
+.btn-restart:hover {
+    background: rgb(1, 1, 44);
+    color: white;
+}
+
+/* Tablet devices */
+@media (max-width: 768px) {
+    .container {
+        width: 80%;
+        height: auto;
+        padding: 15px;
+    }
+
+    .home, .about {
+        flex-direction: column;
+        padding: 4rem 5%;
+    }
+
+    .home-image img, .about-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .home-text h1, .about-text h1 {
+        font-size: 32px;
+    }
+
+    .home-text p, .about-text p {
+        font-size: 16px;
+    }
+
+    .Quiz-Info {
+        width: 90%;
+        height: auto;
+        padding: 15px;
+    }
+
+    .Quiz-Info h2 {
+        font-size: 30px;
+    }
+
+    .Quiz-Info .info {
+        font-size: 14px;
+    }
+
+    .btn-QuizMech .info-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .heading {
+        font-size: 40px;
+    }
+
+    .timer {
+        height: 80px;
+    }
+
+    .answer-wrapper .answer {
+        height: 30px;
+        padding: 10px;
+    }
+
+    .button-wrapper .btn {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .home, .about {
+        padding: 3rem 3%;
+    }
+
+    .home-image img, .about-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .home-text h1, .about-text h1 {
+        font-size: 28px;
+    }
+
+    .home-text p, .about-text p {
+        font-size: 14px;
+    }
+
+    .Quiz-Info {
+        width: 95%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .Quiz-Info h2 {
+        font-size: 25px;
+    }
+
+    .Quiz-Info .info {
+        font-size: 12px;
+    }
+
+    .btn-QuizMech .info-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .heading {
+        font-size: 35px;
+    }
+
+    .timer {
+        height: 70px;
+    }
+
+    .answer-wrapper .answer {
+        height: 25px;
+        padding: 8px;
+    }
+
+    .button-wrapper .btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+
+
+
+
